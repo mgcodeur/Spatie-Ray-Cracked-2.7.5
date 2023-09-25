@@ -1,0 +1,24 @@
+{
+  "name": "Ray",
+  "version": "2.7.5",
+  "main": "dist-electron/main/index.js",
+  "description": "Ray app",
+  "author": {
+    "name": "Spatie",
+    "email": "info@spatie.be"
+  },
+  "license": "MIT",
+  "private": true,
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:7777/"
+    }
+  },
+  "engines": {
+    "node": "^20.0.0"
+  },
+  "dependencies": {
+    "@mdx-js/rollup": "^2.3.0",
+    "cpu-features": "0.0.8"
+  }
+}
