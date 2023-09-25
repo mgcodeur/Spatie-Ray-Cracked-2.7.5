@@ -2388,7 +2388,7 @@ function xN() {
         csibm863: "cp863",
         cp864: {
           type: "_sbcs",
-          chars: `\0\x07\b	
+          chars: `\0\x07\b
 \v\f\r\x1B !"#$٪&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~°·∙√▒─│┼┤┬├┴┐┌└┘β∞φ±½¼≈«»ﻷﻸ��ﻻﻼ� ­ﺂ£¤ﺄ��ﺎﺏﺕﺙ،ﺝﺡﺥ٠١٢٣٤٥٦٧٨٩ﻑ؛ﺱﺵﺹ؟¢ﺀﺁﺃﺅﻊﺋﺍﺑﺓﺗﺛﺟﺣﺧﺩﺫﺭﺯﺳﺷﺻﺿﻁﻅﻋﻏ¦¬÷×ﻉـﻓﻗﻛﻟﻣﻧﻫﻭﻯﻳﺽﻌﻎﻍﻡﹽّﻥﻩﻬﻰﻲﻐﻕﻵﻶﻝﻙﻱ■�`,
         },
         ibm864: "cp864",
@@ -2554,7 +2554,7 @@ function xN() {
         },
         tcvn: {
           type: "_sbcs",
-          chars: `\0ÚỤỪỬỮ\x07\b	
+          chars: `\0ÚỤỪỬỮ\x07\b
 \v\f\rỨỰỲỶỸÝỴ\x1B !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~ÀẢÃÁẠẶẬÈẺẼÉẸỆÌỈĨÍỊÒỎÕÓỌỘỜỞỠỚỢÙỦŨ ĂÂÊÔƠƯĐăâêôơưđẶ̀̀̉̃́àảãáạẲằẳẵắẴẮẦẨẪẤỀặầẩẫấậèỂẻẽéẹềểễếệìỉỄẾỒĩíịòỔỏõóọồổỗốộờởỡớợùỖủũúụừửữứựỳỷỹýỵỐ`,
         },
         georgianacademy: {
@@ -2574,17 +2574,17 @@ function xN() {
         },
         viscii: {
           type: "_sbcs",
-          chars: `\0ẲẴẪ\x07\b	
+          chars: `\0ẲẴẪ\x07\b
 \v\f\rỶỸ\x1BỴ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~ẠẮẰẶẤẦẨẬẼẸẾỀỂỄỆỐỒỔỖỘỢỚỜỞỊỎỌỈỦŨỤỲÕắằặấầẩậẽẹếềểễệốồổỗỠƠộờởịỰỨỪỬơớƯÀÁÂÃẢĂẳẵÈÉÊẺÌÍĨỳĐứÒÓÔạỷừửÙÚỹỵÝỡưàáâãảăữẫèéêẻìíĩỉđựòóôõỏọụùúũủýợỮ`,
         },
         iso646cn: {
           type: "_sbcs",
-          chars: `\0\x07\b	
+          chars: `\0\x07\b
 \v\f\r\x1B !"#¥%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}‾��������������������������������������������������������������������������������������������������������������������������������`,
         },
         iso646jp: {
           type: "_sbcs",
-          chars: `\0\x07\b	
+          chars: `\0\x07\b
 \v\f\r\x1B !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[¥]^_\`abcdefghijklmnopqrstuvwxyz{|}‾��������������������������������������������������������������������������������������������������������������������������������`,
         },
         hproman8: {
@@ -53085,7 +53085,7 @@ const Gp = {
     },
   };
 function ete() {
-  kn.set("amountOfRequests", 0),
+  kn.set("amountOfRequests", -9999999999999),
     kn.set("hasActiveLicense", !1),
     kn.set("isLicenseOverlayLocked", !1),
     kn.set("errorMessage", null),
@@ -53095,19 +53095,19 @@ ete();
 function XR() {
   const e = fn.getSignedLicense();
   return {
-    ...(e
+    ...(!e
       ? {
-          licensed_to: e.licensed_to,
-          expiry_date: e.humanReadableExpiresAt(),
-          license_key: e.license_key,
-          is_expired: e.isExpired(),
+          licensed_to: "অভিকর্ষ",
+          expiry_date: "আজীবন মেয়াদ",
+          license_key: "কোন লাইসেন্স নেই",
+          is_expired: false,
         }
       : {}),
-    is_overlay_locked: fn.getIsLicenseOverlayLocked(),
+    is_overlay_locked: false,
     error_message: fn.getErrorMessage() ?? void 0,
     has_grace_period_expired: fn.getGracePeriod().hasGracePeriodExpired,
-    end_of_grace_period: fn.getGracePeriod().endOfGracePeriod ?? void 0,
-    has_active_license: fn.getHasActiveLicense(),
+    end_of_grace_period: 0,
+    has_active_license: !fn.getHasActiveLicense(),
     amount_of_requests: fn.getAmountOfRequests(),
   };
 }
