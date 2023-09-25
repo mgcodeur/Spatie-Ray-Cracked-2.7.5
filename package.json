@@ -17,8 +17,15 @@
   "engines": {
     "node": "^20.0.0"
   },
+  "scripts": {
+    "start": "electron .",
+    "prettier": "prettier --write ."
+  },
   "dependencies": {
-    "@mdx-js/rollup": "^2.3.0",
-    "cpu-features": "0.0.8"
+    "@mdx-js/rollup": "^2.3.0"
+  },
+  "devDependencies": {
+    "electron": "^26.2.2",
+    "prettier": "^3.0.3"
   }
 }
