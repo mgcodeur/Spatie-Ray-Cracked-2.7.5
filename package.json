@@ -18,14 +18,80 @@
     "node": "^20.0.0"
   },
   "scripts": {
-    "start": "electron .",
-    "prettier": "prettier --write ."
+    "prettify": "prettier --write .",
+    "build-installer": "electron-builder",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "com.xray.app",
+    "productName": "XRay",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.developer-tools",
+      "extendInfo": {
+        "NSRequiresAquaSystemAppearance": false
+      }
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico",
+      "asar": true
+    },
+    "nsis": {
+      "installerIcon": "assets/icon.ico",
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "XRay",
+      "uninstallDisplayName": "XRay",
+      "runAfterFinish": true,
+      "installerHeaderIcon": "assets/icon.ico",
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ]
   },
   "dependencies": {
     "@mdx-js/rollup": "^2.3.0"
   },
   "devDependencies": {
     "electron": "^26.2.2",
+    "electron-builder": "^24.6.4",
     "prettier": "^3.0.3"
   }
 }
