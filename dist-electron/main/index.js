@@ -53097,9 +53097,9 @@ function XR() {
   return {
     ...(!e
       ? {
-          licensed_to: "অভিকর্ষ",
-          expiry_date: "আজীবন মেয়াদ",
-          license_key: "কোন লাইসেন্স নেই",
+          licensed_to: "Erfan Ahmed Siam",
+          expiry_date: "99-9-9999",
+          license_key: "999-999-99",
           is_expired: false,
         }
       : {}),
@@ -72899,7 +72899,7 @@ function dc() {
   if (er) return er.show();
   (er = new xe.BrowserWindow({ ...Qp(), minHeight: 600, minWidth: 400 })),
     er.on("closed", () => (er = null)),
-    Wp(er, { page: "license" }),
+    // Wp(er, { page: "license" }),
     zp(er);
 }
 function cT() {
@@ -72921,7 +72921,7 @@ async function Yae() {
   pc(!1), dc();
 }
 function Xae() {
-  Bg++, fn.setAmountOfRequests(Bg), !lT && Bg >= Vae && (hT(!0), dc());
+  Bg, fn.setAmountOfRequests(Bg), !lT && Bg >= Vae && (hT(!0), dc());
 }
 function fT(e) {
   const t = new YR(e);
